@@ -18,11 +18,8 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     
-    - name: Build application
-      run: dotnet build
+    - name: Build
+      run: dotnet build --configuration Release --no-restore
     
-    - name: Run tests and generate code coverage report
-      run: dotnet test
-
-    - name: Update Coverage Badge
-      uses: we-cli/coverage-badge-action@main
+    - name: Test
+      run: dotnet test --configuration Release --no-build --logger trx
