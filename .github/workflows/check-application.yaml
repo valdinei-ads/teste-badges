@@ -1,0 +1,28 @@
+name: Build and Test
+
+on:
+  push
+     
+jobs:
+  check-application:
+    runs-on: ubuntu-latest    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+    
+    - name: Setup .NET Core
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: '6.0.x' # ou versão mais recente
+          
+    - name: Restore dependencies
+      run: dotnet restore
+    
+    - name: Build application
+      run: dotnet build
+    
+    - name: Run tests and generate code coverage report
+      run: dotnet test
+
+    - name: Update Coverage Badge
+      uses: we-cli/coverage-badge-action@main
