@@ -23,8 +23,9 @@ jobs:
       
     - name: Test
       run: dotnet test --configuration Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
-    - name: Coverage
-      uses: codecov/codecov-action@v1
+    
+    - name: Upload coverage reports to Codecov
+      uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
         flags: unittests
