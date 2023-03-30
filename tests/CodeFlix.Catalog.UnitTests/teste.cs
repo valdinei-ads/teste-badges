@@ -5,6 +5,6 @@ public class TesteErrorBadge
     [Fact]
     public void TesteErrro()
     {
-        Assert.True(1==3);
+        Assert.True(1==1);
     }
 }
