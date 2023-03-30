@@ -1,3 +1,3 @@
 # CodeFlix.Catalog
 
-[![.NET Test](https://github.com/valdinei-ads/teste-badges/actions/workflows/dotnet-test.yml/badge.svg)](https://github.com/valdinei-ads/teste-badges/actions/workflows/dotnet-test.yml)
+[![codecov](https://codecov.io/gh/valdinei-ads/teste-badges/branch/main/graph/badge.svg?token={token}&flag=unittests)](https://codecov.io/gh/valdinei-ads/teste-badges/branch/main?flag=unittests)

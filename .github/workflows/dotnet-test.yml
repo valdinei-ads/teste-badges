@@ -20,6 +20,11 @@ jobs:
     
     - name: Build
       run: dotnet build --configuration Release --no-restore
-    
+      
     - name: Test
-      run: dotnet test --configuration Release --no-build --logger trx
+      run: dotnet test --configuration Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+    - name: Coverage
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        flags: unittests
